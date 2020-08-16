@@ -5,4 +5,7 @@ const app = express();
 app.get("/api/cities", (req, res) => {
     res.send(data.cities);
 });
+app.get("/api/airlines", (req, res) => {
+    res.send(data.airlines);
+});
 app.listen(5000, () => console.log("Server started at http://localhost:5000"));

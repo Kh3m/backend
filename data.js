@@ -1,7 +1,3 @@
-// import logo1 from "./images/delta.png";
-// import logo2 from "./images/turkish.png";
-// import logo3 from "./images/lufthanza.png";
-
 
 export default {
   cities: [
@@ -130,40 +126,70 @@ export default {
       name: "Delta",
       airlineId: "DL 214",
       description: "",
-      // logo: {
-      //   url: logo1
-      // }
+      logo: {
+        url: '/images/delta.png'
+      }
 
     },
     {
       id: "2",
-      name: "KLM",
-      airlineId: "KL 587",
+      name: "Ethiopian",
+      airlineId: "ET 587",
       description: "",
-      // logo: { url: logo2 }
+      logo: { url: '/images/ethiopian.png' }
     },
     {
       id: "3",
       name: "Virgin Atlantic",
       airlineId: "VS 138",
       description: "",
-      // logo: { url: logo3 }
+      logo: { url: '/images/virgin-atlantic.png' }
 
     },
     {
       id: "4",
-      name: "Ethiopian",
-      airlineId: "ET 200",
+      name: "Emirates",
+      airlineId: "EM 577",
       description: "",
-      // logo: { url: logo3 }
+      logo: { url: '/images/emirates.png' }
     },
     {
       id: "5",
-      name: "Delta",
-      airlineId: "DA 138",
+      name: "Qatar",
+      airlineId: "QT 138",
       description: "",
-      // logo: { url: logo3 }
-    }
+      logo: { url: '/images/qatar.png' }
+    },
+    {
+      id: "6",
+      name: "Etihad",
+      airlineId: "ED 232",
+      description: "",
+      logo: { url: '/images/etihad.png' }
+    },
+    {
+      id: "7",
+      name: "Lufthanza",
+      airlineId: "LFT 138",
+      description: "",
+      logo: { url: '/images/lufthanza.png' }
+    },
+    {
+      id: "8",
+      name: "Turkish",
+      airlineId: "TK 678",
+      description: "",
+      logo: { url: '/images/turkish.png' }
+    },
+    {
+      id: "9",
+      name: "Air Peace",
+      airlineId: "AP 244",
+      description: "",
+      logo: { url: '/images/airpeace.png' }
+    },
+
+
   ]
 }
 
