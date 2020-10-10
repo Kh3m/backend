@@ -21,6 +21,7 @@ app.get("/api/flights", (req, res) => {
     let departure = req.departureDate
     let arrival = req.returnDate
     let url = "https://travelpayouts-travelpayouts-flight-data-v1.p.rapidapi.com/v1/prices/direct/"
+    // let testurl = "https://test.com"
 
     axios({
         "method": "GET",
