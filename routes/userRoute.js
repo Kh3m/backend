@@ -1,14 +1,16 @@
 import express from 'express'
 import User from '../models/userModel'
-const router = express.Router()
 import { getToken } from '../util'
 
+
+const router = express.Router()
 router.get("/createadmin", async (req, res) => {
     try {
         const user = new User({
-            name: 'Chibuike',
-            email: 'example@example.com',
-            password: '1234',
+            fName: 'Chibuike2',
+            lName: 'Chibyke',
+            email: 'example2@example.com',
+            password: '12345',
             isAdmin: true
         })
 
@@ -27,13 +29,35 @@ router.post("/signin", async (req, res) => {
     if (signinUser) {
         res.send({
             _id: signinUser.id,
-            name: signinUser.name,
+            name: signinUser.fName,
             email: signinUser.email,
             isAdmin: signinUser.isAdmin,
-            token: getToken(user)
+            token: getToken(signinUser)
         })
     } else {
-        res.status(401).send({ msg: "Invalid email or password" })
+        res.status(401).send({ message: "Invalid email or password" })
+    }
+})
+router.post("/register", async (req, res) => {
+    const user = new User({
+        fName: req.body.fName,
+        lName: req.body.lName,
+        email: req.body.email,
+        password: req.body.password
+    })
+    const newUser = await user.save()
+
+    if (newUser) {
+        res.send({
+            _id: newUser.id,
+            fName: newUser.fName,
+            lName: newUser.lName,
+            email: newUser.email,
+            isAdmin: newUser.isAdmin,
+            token: getToken(newUser)
+        })
+    } else {
+        res.status(401).send({ message: "Invalid user data" })
     }
 })
 export default router

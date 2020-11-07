@@ -5,12 +5,14 @@ import dotenv from 'dotenv'
 import mongoose from 'mongoose'
 import userRoute from './routes/userRoute'
 import axios from 'axios'
+import bodyParser from 'body-parser'
 // const axios = require('axios')
 
 // require('dotenv').config()
 // const fetch = require('node-fetch');
 const app = express();
 dotenv.config()
+app.use(bodyParser.json())
 
 const mongodburl = config.MONGODB
 const tp_token = config.TRAVELPAYOUTS
@@ -26,6 +28,7 @@ mongoose.connect(mongodburl, {
 // const rapid_api = process.env.REACT_APP_RAPID_API
 
 app.use("/api/users", userRoute)
+
 app.get("/api/cities", (req, res) => {
     res.send(data.cities);
 });
